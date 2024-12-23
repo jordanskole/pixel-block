@@ -13,7 +13,7 @@ function App() {
       templateColumns={"repeat(16, 1fr)"}
       templateRows={"repeat(16, 1fr)"}
     >
-      {ROWS.map((row) => row.map(() => <Pixel />))}
+      {ROWS.map((row, ri) => row.map((_, ci) => <Pixel key={`${ri}-${ci}`} />))}
     </Grid>
   );
 }
