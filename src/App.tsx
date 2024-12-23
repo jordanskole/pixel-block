@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Grid, SimpleGrid } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import Pixel from "./components/ui/pixel";
 import { ROWS } from "./constants/rows";
 
