@@ -38,9 +38,9 @@ function Pixel() {
         maxW={"100%"}
         onTouchStart={() => setIsPressed(true)}
         onTouchEnd={() => setIsPressed(false)}
-        onMouseEnter={() => setIsPressed(true)}
-        onMouseLeave={() => setIsPressed(false)}
-        onClick={incrementColorIndex}
+        // onMouseEnter={() => setIsPressed(true)}
+        // onMouseLeave={() => setIsPressed(false)}
+        // onClick={incrementColorIndex}
       />
     </AspectRatio>
   );
