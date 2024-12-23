@@ -1,22 +1,9 @@
 import { Box, AspectRatio } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { colors } from "@/constants/colors";
 
 function Pixel() {
   const [colorIndex, setColorIndex] = useState<number>(0);
-  const [isPressed, setIsPressed] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isPressed) {
-      //Implementing the setInterval method
-      const interval = setInterval(() => {
-        incrementColorIndex();
-      }, 500);
-
-      //Clearing the interval
-      return () => clearInterval(interval);
-    }
-  }, [isPressed]);
 
   const incrementColorIndex = () =>
     setColorIndex((oldIndex) => {
@@ -27,20 +14,13 @@ function Pixel() {
     });
 
   return (
-    <AspectRatio
-      ratio={1 / 1}
-      borderRadius={1}
-      maxW={"100%"}
-      boxShadow={isPressed ? "inset" : undefined}
-    >
+    <AspectRatio ratio={1 / 1} borderRadius={1}>
       <Box
         bg={colors[colorIndex]}
-        maxW={"100%"}
-        onTouchStart={() => setIsPressed(true)}
-        onTouchEnd={() => setIsPressed(false)}
-        // onMouseEnter={() => setIsPressed(true)}
-        // onMouseLeave={() => setIsPressed(false)}
-        // onClick={incrementColorIndex}
+        w={"100%"}
+        h="100%"
+        onTouchStart={incrementColorIndex}
+        onClick={incrementColorIndex}
       />
     </AspectRatio>
   );
